@@ -44,7 +44,7 @@ const TextInput: React.FC<TextInputProps> = ({
         {icon && (
           <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
             {icon}
-          </div> // Render the icon if provided
+          </div>
         )}
       </div>
       {error && <div className="text-red-600 text-sm">{error}</div>}

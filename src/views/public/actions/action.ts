@@ -15,8 +15,6 @@ import {
 import axiosInstance from "../../../utils/AxiosInterceptor";
 
 interface GetAllProductsParams {
-  page?: number;
-  limit?: number;
   sortBy?: string;
   sortOrder?: string;
   search?: string;

@@ -48,7 +48,7 @@ const AllProducts = () => {
   }, [dispatch, Params]);
 
   return (
-    <div>
+    <div className="h-screen">
       <div className="flex flex-col md:flex-row justify-between mt-5">
         <div className="mt-2">
           <SelectInput

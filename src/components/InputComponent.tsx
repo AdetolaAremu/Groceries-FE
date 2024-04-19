@@ -1,7 +1,7 @@
 import React from "react";
 
 interface TextInputProps {
-  label: string;
+  label?: string;
   value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
@@ -25,9 +25,12 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
   return (
     <div className="relative">
-      <label htmlFor={name} className="mb-3">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className="mb-3">
+          {label}
+        </label>
+      )}
+
       <div className="relative">
         <input
           type="text"

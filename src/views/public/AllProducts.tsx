@@ -49,8 +49,8 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div className="flex justify-between mt-7">
-        <div>
+      <div className="flex flex-col md:flex-row justify-between mt-5">
+        <div className="mt-2">
           <SelectInput
             options={[
               { value: "brand-ASC", label: "Sort By Brand: A to Z" },
@@ -65,13 +65,12 @@ const AllProducts = () => {
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mt-2">
           <TextInput
-            label="Search"
             value={Params.search}
             onChange={handleChange}
             name="search"
-            inputWidth="w-80"
+            inputWidth="w-full md:w-80"
             placeholder="Search product name or brand"
             icon={<img src={Search} alt="Search Icon" className="h-6 w-6" />}
           />
@@ -86,7 +85,7 @@ const AllProducts = () => {
         </div>
       )}
 
-      <div className="mt-7 grid grid-cols-1 md:grid-cols lg:grid-cols-3 place-items-center">
+      <div className="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
         {productLoading ? (
           <div className="flex justify-center">
             <LoadingSpinner />

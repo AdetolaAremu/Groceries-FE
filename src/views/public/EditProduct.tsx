@@ -82,8 +82,8 @@ const EditProduct = () => {
   }, [oneProdctFetch]);
 
   return (
-    <div className="flex justify-center mt-20">
-      <div className="bg-white w-2/4 h-96 p-6 rounded-xl">
+    <div className="flex flex-col md:flex-row justify-center mt-0 md:mt-20 h-screen overflow-y-hidden">
+      <div className="bg-white w-full md:w-2/4 h-96 p-6 rounded-xl">
         <div className="flex">
           <img
             src={Back}

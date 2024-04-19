@@ -5,7 +5,7 @@ import NavBar from "../components/Navbar";
 
 const AuthLayout = () => {
   return (
-    <section className="bg-[#F2F2F2] w-full h-screen px-12 py-6">
+    <section className="bg-[#F2F2F2] w-full h-auto px-12 py-6">
       <NavBar />
       <div className="">
         <Routes>

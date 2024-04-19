@@ -22,7 +22,7 @@ const SelectInput: React.FC<SelectInputProps> = ({
 }) => {
   return (
     <select
-      className="py-2 px-3 w-64 rounded-xl"
+      className="py-3 px-3 w-full md:w-64 rounded-xl"
       onChange={onChange}
       value={value}
       name={name}

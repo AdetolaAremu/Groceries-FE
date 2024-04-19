@@ -8,6 +8,7 @@ import { editProduct, getOneProduct } from "./actions/action";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../../components/Loading";
 import Modal from "../../components/Modal";
+import TextInput from "../../components/InputComponent";
 
 const editProductValues: IEditProduct = {
   barcode: "",
@@ -108,64 +109,33 @@ const EditProduct = () => {
             <LoadingSpinner />
           ) : (
             <div>
-              <div>
-                <label htmlFor="Brand" className="mb-3">
-                  Brand
-                </label>
-                <input
-                  type="text"
-                  className="block w-full p-3 ps-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50
-					        focus:ring-buttonGreen focus:border-buttonGreen focus:outline-none"
-                  placeholder="Enter brand name"
-                  value={Input?.brand}
-                  onChange={handleChange}
-                  name="brand"
-                />
-                {InputErrors?.brand && (
-                  <div className="text-red-600 text-sm">
-                    {InputErrors?.brand}
-                  </div>
-                )}
-              </div>
-              <div className="mt-4">
-                <label htmlFor="Brand" className="mb-3">
-                  Product Name
-                </label>
-                <input
-                  type="text"
-                  className="block w-full p-3 ps-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50
-					        focus:ring-buttonGreen focus:border-buttonGreen focus:outline-none"
-                  placeholder="Enter product name"
-                  value={Input?.product_name}
-                  onChange={handleChange}
-                  name="product_name"
-                />
-                {InputErrors.product_name && (
-                  <div className="text-red-600 text-sm">
-                    {InputErrors.product_name}
-                  </div>
-                )}
-              </div>
-              <div className="mt-4">
-                <label htmlFor="Brand" className="mb-3">
-                  UPC Bar Code
-                </label>
-                <input
-                  type="text"
-                  className="block w-full p-3 ps-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50
-					        focus:ring-buttonGreen focus:border-buttonGreen focus:outline-none"
-                  placeholder="Enter barcode"
-                  value={Input?.barcode}
-                  onChange={handleChange}
-                  name="barcode"
-                />
+              <TextInput
+                label="Brand"
+                value={Input?.brand}
+                onChange={handleChange}
+                name="brand"
+                placeholder="Enter brand name"
+                error={InputErrors?.brand}
+              />
 
-                {InputErrors.barcode && (
-                  <div className="text-red-600 text-sm">
-                    {InputErrors.barcode}
-                  </div>
-                )}
-              </div>
+              <TextInput
+                label="Product Name"
+                value={Input?.product_name}
+                onChange={handleChange}
+                name="brand"
+                placeholder="Enter product name"
+                error={InputErrors?.product_name}
+              />
+
+              <TextInput
+                label="UPC Bar Code"
+                value={Input?.barcode}
+                onChange={handleChange}
+                name="brand"
+                placeholder="Enter Bar Code"
+                error={InputErrors?.barcode}
+              />
+
               <div className="flex justify-center mt-4">
                 <button
                   onClick={(e: any) => {

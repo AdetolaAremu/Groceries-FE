@@ -6,6 +6,8 @@ import LoadingSpinner from "../../components/Loading";
 import Edit from "../../assets/Edit.svg";
 import Search from "../../assets/Search.svg";
 import { IProduct } from "../../types/response/ProductsResponse";
+import TextInput from "../../components/InputComponent";
+import SelectInput from "../../components/SelectComponent";
 
 const initialState: IProduct = {
   sortBy: "id",
@@ -49,33 +51,29 @@ const AllProducts = () => {
     <div>
       <div className="flex justify-between mt-7">
         <div>
-          <select
-            className="py-2 px-3 w-64 rounded-xl"
-            onChange={handleChange}
+          <SelectInput
+            options={[
+              { value: "brand-ASC", label: "Sort By Brand: A to Z" },
+              { value: "brand-DESC", label: "Sort By Brand: Z to A" },
+              { value: "product_name-ASC", label: "Sort By Product: A to Z" },
+              { value: "product_name-DESC", label: "Sort By Product: Z to A" },
+            ]}
             value={Params.sortOrder}
+            onChange={handleChange}
             name="sortOrder"
-          >
-            <option defaultValue="">Sort By</option>
-            <option value="brand-ASC">Sort By Brand: A to Z</option>
-            <option value="brand-DESC">Sort By Brand: Z to A</option>
-            <option value="product_name-ASC">Sort By Product: A to Z</option>
-            <option value="product_name-DESC">Sort By Product: Z to A</option>
-          </select>
+            placeholder="Sort By"
+          />
         </div>
 
         <div className="relative">
-          <input
-            type="text"
-            className="w-80 py-2 px-3 rounded-xl pl-10"
-            placeholder="Search product name or brand"
-            onChange={handleChange}
+          <TextInput
+            label="Search"
             value={Params.search}
+            onChange={handleChange}
             name="search"
-          />
-          <img
-            src={Search}
-            alt="edit"
-            className="h-6 w-6 absolute left-3 top-2 text-gray-400"
+            inputWidth="w-80"
+            placeholder="Search product name or brand"
+            icon={<img src={Search} alt="Search Icon" className="h-6 w-6" />}
           />
         </div>
       </div>

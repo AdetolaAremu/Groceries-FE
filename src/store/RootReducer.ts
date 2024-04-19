@@ -1,4 +1,3 @@
-// app/store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import PublicReducer, { PublicState } from "../views/public/actions/reducer";
